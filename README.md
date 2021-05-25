@@ -55,7 +55,7 @@ Where:
 
 ## Settings
 
-The list of all available settings is [here](repo/blob/master/other_file.md)
+The list of all available settings is [here](**repo/blob/master/other_file.md**)
 
 
 ## Building a new release
