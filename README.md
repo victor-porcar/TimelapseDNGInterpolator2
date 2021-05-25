@@ -10,15 +10,7 @@ Adobe offers a [free tool](https://helpx.adobe.com/es/photoshop/using/adobe-dng-
 
 Let's suppose there is a list of consecutives images in dng format from a timelapse in a directory
 
-`Image01.dng`
-`Image02.dng`
-`Image03.dng`
-`Image04.dng`
-`Image05.dng`
-...
-`Image20.dng`
-...
-`Image99.dng`
+`Image01.dng` `Image02.dng` `Image03.dng` `Image04.dng` `Image05.dng` ... `Image20.dng` ... `Image99.dng`
 
 At this point all images has the "exposure" parameter set to 0 (just as it is taken from the camera)
 
