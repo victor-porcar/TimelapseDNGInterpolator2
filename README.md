@@ -2,7 +2,7 @@
 
 This is a Java tool to interpolate settings from a list of images in format [DNG](https://www.adobe.com/content/dam/acom/en/products/photoshop/pdfs/dng_spec_1.4.0.0.pdf), which is an open RAW specification for images created by Adobe.
 
-I created for my own use to have steady transitions in timelapses, specially with light changing conditions. The tool is a *one day* project just for fun 😊. Said that, I believe it could be useful for somebody else, so I make it publicly available under license Apache * 
+I created for my own use to have steady transitions in timelapses, specially with light changing conditions. The tool is a *one day* project just for fun 😊. Said that, I believe it could be useful for somebody else, so I make it publicly available under license Apache 2.0
 
 Please note that Adobe offers a [free tool](https://helpx.adobe.com/es/photoshop/using/adobe-dng-converter.html) to convert any RAW custom format to DNG
 
@@ -62,7 +62,7 @@ In order to know the name of the setting in the DNG file, the following trick ca
 Edit the setting you want to know the name with Lightroom (or similar) and set it to a particular value.
 Once the dng file is properly saved, open the dng file with any text editor and you'll see the XMP section as plain text (JSON). Look for the value you set before and you'll see the corresponding name of the setting.
 
-## My Settins
+## My Workflow
 
 [Lightroom and GoPro](LIGHTROOM_and_GOPRO.md)
 
