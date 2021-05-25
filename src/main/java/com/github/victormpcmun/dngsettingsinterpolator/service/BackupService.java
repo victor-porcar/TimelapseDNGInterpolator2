@@ -7,7 +7,7 @@ public class BackupService {
 
     FileService fileService = FileService.INSTANCE;
 
-    public void backupFile(String workingDirectory, String fileName, String backupDirectory) {
+    public void  backupFile(String workingDirectory, String fileName, String backupDirectory) {
         String filePath = workingDirectory + File.separator+fileName;
         byte[] content = fileService.readFileAsByteArray(filePath);
 
