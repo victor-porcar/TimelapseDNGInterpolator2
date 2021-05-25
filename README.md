@@ -55,7 +55,7 @@ Where:
 
 ## Settings
 
-The list of all available settings is [here](allProperties.txt)
+The list of all available settings is [here](src/main/resources/allProperties.txt)
 
 
 ## Building a new release
