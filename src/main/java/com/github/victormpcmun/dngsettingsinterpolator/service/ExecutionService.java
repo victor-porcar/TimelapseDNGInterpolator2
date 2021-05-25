@@ -19,7 +19,7 @@ public class ExecutionService {
 
     public void execute(CommandLineArguments commandLineArguments) {
         if (!commandLineArguments.isParametersOK()) {
-            abortNoError("Parameters are not set correctly. Please execute --help");
+            abortNoError("Parameters are not set correctly.");
         }
 
         if (commandLineArguments.isViewSettings()) {
