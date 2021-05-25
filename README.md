@@ -65,6 +65,7 @@ Once the dng file is properly saved, open the dng file with any text editor and 
 ## My Settins
 
 [Lightroom and GoPro](LIGHTROOM_and_GOPRO.md)
+
 [Lightroom and Nikon](LIGHTROOM_and_NIKON.md)
 
 ## Building a new release
