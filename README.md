@@ -27,7 +27,7 @@ It would be very nice to have a gradual increase of exposure parameter in a rang
 *  ... 
 * `Image20.dng` exposure = 1
 
-This could be using this tool as follows:
+This could be achieved automatically using this tool as follows:
 
 `java -jar dng-settings-interpolator-X.X.jar D:\IMAGES D:\BACKUP Image01.dng Image20.dng crs:Exposure2012`
 
