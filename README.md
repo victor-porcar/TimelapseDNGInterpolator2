@@ -2,7 +2,7 @@
 
 This is a Java tool to interpolate settings from a list of images in format [DNG](https://www.adobe.com/content/dam/acom/en/products/photoshop/pdfs/dng_spec_1.4.0.0.pdf), which is an open RAW specification for images created by Adobe.
 
-I created for my own use to have steady transitions in timelapses, specially with light changing conditions.
+I created for my own use to have steady transitions in timelapses, specially with light changing conditions. The tool is "one day" project just for fun. I don't plan to extend it at the moment
 
 I believe it could be useful for somebody else, so I make it publicly available under license Apache * 
 
