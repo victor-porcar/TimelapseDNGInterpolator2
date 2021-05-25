@@ -55,7 +55,7 @@ Where:
 
 ## Settings
 
-The list of all available settings is [here](/blob/master/src/main/resources/allProperties.txt)
+The list of all available settings is [here](repo/blob/master/src/main/resources/allProperties.txt)
 
 
 ## Building a new release
