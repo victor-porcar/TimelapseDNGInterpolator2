@@ -19,7 +19,7 @@ At this point all images has the "exposure" parameter set to 0 (just as it is ta
 
 Using a program like Lightroom or similar, we set the exposure to `Image20.dn` to value 1.
 
-At this point, it would be very nice to have a gradual increase of exposure parameter in a range `Image01.dng` to in `Image20.dng` to have:
+It would be very nice to have a gradual increase of exposure parameter in a range of images `Image01.dng` to `Image20.dng`:
 
 * `Image01.dng` exposure = 0
 * `Image02.dng` exposure = 0.05
