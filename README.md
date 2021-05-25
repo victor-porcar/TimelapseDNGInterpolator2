@@ -22,7 +22,7 @@ At this point, it would be very nice to have a gradual increase of exposure para
 * `Image01.dng` exposure = 0
 * `Image02.dng` exposure = 0.05
 * `Image03.dng` exposure = 0.1
-..
+*  ... 
 * `Image20.dng` exposure = 1
 
 This could be using this tool as follows:
