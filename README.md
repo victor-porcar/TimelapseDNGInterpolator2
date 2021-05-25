@@ -22,7 +22,7 @@ Let's suppose there is a list of consecutives images in dng format from a timela
 
 At this point all images has the "exposure" parameter set to 0 (just as it is taken from the camera)
 
-Using a program like Lightroom or similar, we set the exposure to Image20.dn to value 1.
+Using a program like Lightroom or similar, we set the exposure to `Image20.dn` to value 1.
 
 At this point, it would be very nice to have a gradual increase of exposure parameter in a range `Image01.dng` to in `Image20.dng`
 
