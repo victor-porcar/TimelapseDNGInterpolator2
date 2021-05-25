@@ -1,7 +1,8 @@
 # DNG Images Settings Interpolator
 
-This is a Java tool to interpolate settings from a list of images in format [DNG](https://www.adobe.com/content/dam/acom/en/products/photoshop/pdfs/dng_spec_1.4.0.0.pdf), which is an open RAW specification for images created by Adobe. In particular it modifies the settings XMP definition embedded in a DNG image.
- 
+This is a Java tool to interpolate settings from a list of images in format [DNG](https://www.adobe.com/content/dam/acom/en/products/photoshop/pdfs/dng_spec_1.4.0.0.pdf), which is an open RAW specification for images created by Adobe.
+
+I created for my own use, just for fun. However, I believe it could be useful for somebody else, so I made it publicly avaialable under license Apache 
 
 Adobe offers a [free tool](https://helpx.adobe.com/es/photoshop/using/adobe-dng-converter.html) to convert any RAW custom format to DNG
 
