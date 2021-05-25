@@ -68,4 +68,4 @@ Once the dng file is properly saved, open the dng file with any text editor and 
 * commit
 * push origin master
 * mvn clean package
-* the new version of the jar is in /bin folder
+* the new version of the jar will be in /bin folder
