@@ -9,11 +9,11 @@ public class ByteArrayService {
 
     public static final ByteArrayService INSTANCE = new ByteArrayService();
 
-    //he Knuth-Morris-Pratt Pattern Matching Algorithm can be used to search a byte array.
-    // from http://helpdesk.objects.com.au/java/search-a-byte-array-for-a-byte-sequence
+    //he Knuth-Morris-Pratt Pattern Matching Algorithm
+    // https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm
 
     public  int indexOf(int from, byte[] data, byte[] pattern) {
-        int[] failure = computeFailure(pattern);
+        int[] failure = failure(pattern);
 
         int j = 0;
 
@@ -31,11 +31,8 @@ public class ByteArrayService {
         return -1;
     }
 
-    /**
-     * Computes the failure function using a boot-strapping process,
-     * where the pattern is matched against itself.
-     */
-    private int[] computeFailure(byte[] pattern) {
+
+    private int[] failure(byte[] pattern) {
         int[] failure = new int[pattern.length];
 
         int j = 0;
