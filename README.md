@@ -66,9 +66,8 @@ Once the dng file is properly saved, open the dng file with any text editor and 
 ## Building a new release
 
 * develop new code and increase manually version in pom.xml
-* git commit -m "comment"
-* git push origin master
-* mvn clean package
-* git commit -m "comment"
-* git push origin master
+* `mvn clean package`
+* `git add .`
+* `git commit -m "comment"`
+* `git push origin master`
 * the new version of the jar will be in /bin folder
