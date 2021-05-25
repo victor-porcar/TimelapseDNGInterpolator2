@@ -28,12 +28,12 @@
         </developer>
     </developers>
 
-    <!--scm>
-        <connection>scm:git:git://github.com/victormpcmun/TimelapseDNGInterpolator.git</connection>
-        <developerConnection>scm:git:https://github.com/victormpcmun/TimelapseDNGInterpolator.git</developerConnection>
-        <url>http://github.com/victormpcmun/TimelapseDNGInterpolator/tree/master</url>
+    <scm>
+        <connection>scm:git:git://github.com/victormpcmun/TimelapseDNGInterpolator2.git</connection>
+        <developerConnection>scm:git:https://github.com/victormpcmun/TimelapseDNGInterpolator2.git</developerConnection>
+        <url>http://github.com/victormpcmun/TimelapseDNGInterpolator2/tree/master</url>
         <tag>HEAD</tag>
-    </scm -->
+    </scm>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
