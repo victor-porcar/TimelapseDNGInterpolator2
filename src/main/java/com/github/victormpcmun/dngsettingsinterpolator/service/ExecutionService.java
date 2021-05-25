@@ -9,7 +9,6 @@ import java.util.List;
 public class ExecutionService {
     public static final ExecutionService INSTANCE = new ExecutionService();
     public static final String ALL_PROPERTIES_FILE = "allProperties.txt";
-    public static final String HELP_FILE = "help.txt";
 
     ResourcesService resourcesService = ResourcesService.INSTANCE;
     DirectoryService directoryService = DirectoryService.INSTANCE;
@@ -23,8 +22,8 @@ public class ExecutionService {
             abortNoError("Parameters are not set correctly. Please execute --help");
         }
 
-        if (commandLineArguments.isHelp()) {
-            System.out.println(getHelpMessage());
+        if (commandLineArguments.isViewSettings()) {
+            System.out.println(resourcesService.getResourcesFile(ALL_PROPERTIES_FILE));
             abortNoError();
         }
 
@@ -78,13 +77,4 @@ public class ExecutionService {
         System.exit(1);
     }
 
-
-    private String getHelpMessage() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(resourcesService.getResourcesFile(HELP_FILE)).append(System.lineSeparator());
-        sb.append("List of settings:").append(System.lineSeparator());
-        sb.append(resourcesService.getResourcesFile(ALL_PROPERTIES_FILE));
-        return sb.toString();
-
-    }
 }

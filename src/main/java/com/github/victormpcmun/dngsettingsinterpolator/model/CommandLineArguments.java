@@ -11,14 +11,14 @@ public class CommandLineArguments {
     private static final Integer INIT_FILE_POSTTION =2;
     private static final Integer END_FILE__POSTTION=3;
     private static final Integer SETTING_NAMES_POSITION =4;
-    private static final Integer HELP_POSITION=0;
+    private static final Integer VIEW_SETTINGS_POSITION =0;
 
     private final List<String>  argList = new ArrayList<>();
     private final boolean parametersOK;
 
     public CommandLineArguments(String[] argsArray) {
         Collections.addAll(argList, argsArray);
-        parametersOK = (argList.size()==1 && argList.get(HELP_POSITION).equals("--help")) || (argList.size()>=(SETTING_NAMES_POSITION +1));
+        parametersOK = (argList.size()==1 && argList.get(VIEW_SETTINGS_POSITION).equals("--settings")) || (argList.size()>=(SETTING_NAMES_POSITION +1));
 
     }
 
@@ -26,8 +26,8 @@ public class CommandLineArguments {
         return parametersOK;
     }
 
-    public boolean isHelp() {
-        return argList.get(HELP_POSITION).equals("--help");
+    public boolean isViewSettings() {
+        return argList.get(VIEW_SETTINGS_POSITION).equals("--settings");
     }
 
     public boolean isAllSettings() {
