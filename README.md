@@ -1,4 +1,4 @@
-# DNG Settings Interpolator
+# DNG Images Settings Interpolator
 
 This is a Java tool to interpolate settings from a list of images in format [DNG](https://www.adobe.com/content/dam/acom/en/products/photoshop/pdfs/dng_spec_1.4.0.0.pdf), which is an open RAW specification for images created by Adobe. In particular it modifies the settings XMP definition embedded in a DNG image.
  
@@ -52,6 +52,10 @@ Where:
 #### View all available settings
 
 `java -jar dng-settings-interpolator-X.X.jar --settings`
+
+## Settings
+
+The list of all available settings is [here](repo/blob/master/other_file.md)
 
 
 ## Building a new release
