@@ -1,6 +1,6 @@
 # DNG Settings Interpolator
 
-This is a tool to interpolate settings from a list of images in format [DNG](https://www.adobe.com/content/dam/acom/en/products/photoshop/pdfs/dng_spec_1.4.0.0.pdf), which is an open RAW specification for images created by Adobe. In particular it modifies the settings XMP definition embedded in a DNG image.
+This is a Java tool to interpolate settings from a list of images in format [DNG](https://www.adobe.com/content/dam/acom/en/products/photoshop/pdfs/dng_spec_1.4.0.0.pdf), which is an open RAW specification for images created by Adobe. In particular it modifies the settings XMP definition embedded in a DNG image.
  
 
 Adobe offers a [free tool](https://helpx.adobe.com/es/photoshop/using/adobe-dng-converter.html) to convert any RAW custom format to DNG
@@ -16,15 +16,13 @@ At this point all images has the "exposure" parameter set to 0 (just as it is ta
 
 Using a program like Lightroom or similar, we set the exposure to `Image20.dn` to value 1.
 
-At this point, it would be very nice to have a gradual increase of exposure parameter in a range `Image01.dng` to in `Image20.dng`
+At this point, it would be very nice to have a gradual increase of exposure parameter in a range `Image01.dng` to in `Image20.dng` to have:
 
-This way
-
-Image01.dng exposure = 0
-Image02.dng exposure = 0.05
-Image03.dng exposure = 0.1
+* `Image01.dng` exposure = 0
+* `Image02.dng` exposure = 0.05
+* `Image03.dng` exposure = 0.1
 ..
-Image20.dng exposure = 1
+* `Image20.dng` exposure = 1
 
 This could be using this tool as follows:
 
