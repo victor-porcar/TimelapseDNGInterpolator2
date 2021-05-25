@@ -1,0 +1,36 @@
+=======================
+com.github.victormpcmun.dngsettingsinterpolator.DNGSettingsInterpolator
+=======================
+
+
+
+Given a directory with DNG files, this tool interpolates settings values from [file1] to [file2]
+The settings are actually embedded in the DNG file (XMP format)
+Plese note the list available settings below:
+
+Examples:
+
+
+1) Interpolate a set of settings
+
+com.github.victormpcmun.dngsettingsinterpolator.DNGSettingsInterpolator [workind_directory] [backup_directory] [file1] [file2] [setting1 Name] [setting2 name] ... [settingN name]
+
+example:
+
+com.github.victormpcmun.dngsettingsinterpolator.DNGSettingsInterpolator d:\dng_directory d:\backup file15.dng file55.dng crs:ParametricHighlights crs:Saturation crs:Exposure2012
+
+It will interpolate the values of settings "crs:ParametricHighlights", "crs:Saturation" and "crs:Exposure2012" for files in range [file16.dng, file54.dng]
+
+
+2) Interpolate all settings
+
+com.github.victormpcmun.dngsettingsinterpolator.DNGSettingsInterpolator d:\dng_directory d:\backup file15.dng file55.dng  *
+
+It will interpolate the values of all settings for files in range [file16.dng, file54.dng]
+
+
+3) Help
+
+com.github.victormpcmun.dngsettingsinterpolator.DNGSettingsInterpolator --help
+
+
