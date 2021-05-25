@@ -1,8 +1,8 @@
 package com.github.victormpcmun.dngsettingsinterpolator.model;
 
 public class Setting {
-    private String name;
-    private String value;
+    private final String name;
+    private final String value;
 
     public String getName() {
         return name;

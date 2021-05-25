@@ -25,9 +25,9 @@ public class DNGFileService {
         byte[] xmpFile = Arrays.copyOfRange(arrayBytes, init, end);
         String xmpContentAsString =  new String(xmpFile);
 
-        byte previousToXmp[] =  Arrays.copyOfRange(arrayBytes, 0, init);
+        byte[] previousToXmp =  Arrays.copyOfRange(arrayBytes, 0, init);
 
-        byte afterXmp[] = Arrays.copyOfRange(arrayBytes, end, arrayBytes.length);
+        byte[] afterXmp = Arrays.copyOfRange(arrayBytes, end, arrayBytes.length);
         DNGFile dngFile = new DNGFile(previousToXmp, xmpFile, afterXmp,xmpContentAsString);
         return dngFile;
     }

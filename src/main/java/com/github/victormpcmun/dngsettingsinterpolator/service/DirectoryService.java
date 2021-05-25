@@ -8,7 +8,7 @@ import java.util.List;
 public class DirectoryService {
 
     public static final DirectoryService INSTANCE = new DirectoryService();
-    private ExecutionService executionService = ExecutionService.INSTANCE;
+    private final ExecutionService executionService = ExecutionService.INSTANCE;
 
     public List<String> getFilesPathInBetween(String workingDirectory, String initFileName, String endFileName) {
 
@@ -36,14 +36,15 @@ public class DirectoryService {
         List<File> fileList = new ArrayList<>();
         File folder = new File(directoryPath);
         File[] listOfFiles = folder.listFiles();
-        Arrays.sort(listOfFiles);
+        if (listOfFiles!=null) {
+            Arrays.sort(listOfFiles);
 
-        for (File file : listOfFiles) {
-            if (file.isFile()) {
-                fileList.add(file);
+            for (File file : listOfFiles) {
+                if (file.isFile()) {
+                    fileList.add(file);
+                }
             }
         }
-
         return fileList;
     }
 }

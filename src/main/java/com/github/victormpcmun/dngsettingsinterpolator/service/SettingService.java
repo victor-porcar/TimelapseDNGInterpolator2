@@ -11,10 +11,10 @@ public class SettingService {
 
     public static final SettingService INSTANCE = new SettingService();
 
-    private FileService fileService =  FileService.INSTANCE;
-    private XMPService xmpService = XMPService.INSTANCE;
-    private ByteArrayService byteArrayService = ByteArrayService.INSTANCE;
-    private DNGFileService dngFileService = DNGFileService.INSTANCE;
+    private final FileService fileService =  FileService.INSTANCE;
+    private final XMPService xmpService = XMPService.INSTANCE;
+    private final ByteArrayService byteArrayService = ByteArrayService.INSTANCE;
+    private final DNGFileService dngFileService = DNGFileService.INSTANCE;
 
 
     public String getSettingValueFromFile(String filePath, String settingName)  {

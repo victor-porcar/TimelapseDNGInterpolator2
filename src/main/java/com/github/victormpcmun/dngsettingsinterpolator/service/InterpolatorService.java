@@ -15,7 +15,7 @@ public class InterpolatorService {
 
     public static final InterpolatorService INSTANCE = new InterpolatorService();
 
-    private static Map<Integer,DecimalFormat>  DECIMAL_FORMAT_MAP = new HashMap<>();
+    private static final Map<Integer,DecimalFormat>  DECIMAL_FORMAT_MAP = new HashMap<>();
 
     static {
         DECIMAL_FORMAT_MAP.put(0,new DecimalFormat("#"));
@@ -45,7 +45,7 @@ public class InterpolatorService {
         String property = settingRange.getSettingName();
         String initValue = settingRange.getValueInit();
         String endValue = settingRange.getValueEnd();
-        Integer decimals = settingRange.getDecimals();
+        int decimals = settingRange.getDecimals();
         String value =  calculateInterpolatedValue(totalElements, indexElement, initValue, endValue, decimals);
         return new Setting(property, value);
     }
@@ -61,8 +61,8 @@ public class InterpolatorService {
             return endValue;
         }
 
-        Double initValueAsDouble = Double.parseDouble(initValue);
-        Double endValueAsDouble = Double.parseDouble(endValue);
+        double initValueAsDouble = Double.parseDouble(initValue);
+        double endValueAsDouble = Double.parseDouble(endValue);
 
 
         double delta = (endValueAsDouble - initValueAsDouble) / (double) (totalElements-1);

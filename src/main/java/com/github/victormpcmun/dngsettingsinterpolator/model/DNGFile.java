@@ -1,9 +1,9 @@
 package com.github.victormpcmun.dngsettingsinterpolator.model;
 
 public class DNGFile {
-    byte previousToXmp[];
-    byte xmpContent[];
-    byte afterXmp[];
+    byte[] previousToXmp;
+    byte[] xmpContent;
+    byte[] afterXmp;
     String xmpContentAsString;
 
 
@@ -16,10 +16,6 @@ public class DNGFile {
 
     public byte[] getPreviousToXmp() {
         return previousToXmp;
-    }
-
-    public byte[] getXmpContent() {
-        return xmpContent;
     }
 
     public byte[] getAfterXmp() {

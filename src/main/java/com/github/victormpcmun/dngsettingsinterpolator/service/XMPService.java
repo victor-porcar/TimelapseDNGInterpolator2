@@ -4,19 +4,19 @@ import com.github.victormpcmun.dngsettingsinterpolator.util.StringUtil;
 import com.github.victormpcmun.dngsettingsinterpolator.model.Setting;
 import com.github.victormpcmun.dngsettingsinterpolator.model.Settings;
 
+import static com.github.victormpcmun.dngsettingsinterpolator.util.StringUtil.replaceInBetween;
+
 public class XMPService {
 
     public static final XMPService INSTANCE = new XMPService();
     public static final String FLOATING_NOT_USED_XMP_ATTRIBUTE = "xmp:CreatorTool";
-
-    private ExecutionService executionService = ExecutionService.INSTANCE;
 
     public String calculateNewXmpContent(String xmpContent,  Settings settings) {
 
         String result = xmpContent;
 
         for (Setting setting: settings.getSettingList()) {
-            result= StringUtil.replaceInBetween(result,setting.getName()+"=\"","\"", setting.getValue());
+            result= replaceInBetween(result,setting.getName()+"=\"","\"", setting.getValue());
         }
 
         String ensuredSizeResult = ensureSize(result, xmpContent.length());
@@ -46,11 +46,11 @@ public class XMPService {
         }
 
         String inBetweenQuotes = StringUtil.inBetween(propertyAndValue,"=\"", "\"");
-        String newInBetweenQuotes = propertyAndValue;
+        String newInBetweenQuotes;
         if (charactersIncrementSize>0) {
             // add
             newInBetweenQuotes = inBetweenQuotes + StringUtil.getRepeatedString("A", charactersIncrementSize);
-        } else if (charactersIncrementSize<0) {
+        } else  {
             // remove
             newInBetweenQuotes = inBetweenQuotes.substring(0,inBetweenQuotes.length()+charactersIncrementSize);
         }

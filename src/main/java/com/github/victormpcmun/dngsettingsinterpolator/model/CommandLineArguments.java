@@ -1,6 +1,7 @@
 package com.github.victormpcmun.dngsettingsinterpolator.model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class CommandLineArguments {
@@ -12,15 +13,11 @@ public class CommandLineArguments {
     private static final Integer SETTING_NAMES_POSITION =4;
     private static final Integer HELP_POSITION=0;
 
-    private List<String>  argList;
-    private boolean parametersOK;
+    private final List<String>  argList = new ArrayList<>();
+    private final boolean parametersOK;
 
     public CommandLineArguments(String[] argsArray) {
-        this.argList = new ArrayList<>();
-        for (String s:argsArray) {
-            argList.add(s);
-        }
-
+        Collections.addAll(argList, argsArray);
         parametersOK = (argList.size()==1 && argList.get(HELP_POSITION).equals("--help")) || (argList.size()>=(SETTING_NAMES_POSITION +1));
 
     }

@@ -81,8 +81,8 @@ public class ExecutionService {
 
     private String getHelpMessage() {
         StringBuilder sb = new StringBuilder();
-        sb.append(resourcesService.getResourcesFile(HELP_FILE) + System.lineSeparator());
-        sb.append("List of settings:" + System.lineSeparator());
+        sb.append(resourcesService.getResourcesFile(HELP_FILE)).append(System.lineSeparator());
+        sb.append("List of settings:").append(System.lineSeparator());
         sb.append(resourcesService.getResourcesFile(ALL_PROPERTIES_FILE));
         return sb.toString();
 

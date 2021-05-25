@@ -62,7 +62,7 @@ public class ByteArrayService {
             }
         }
 
-        byte result[] = outputStream.toByteArray();
+        byte[] result = outputStream.toByteArray();
         return result;
     }
 }
