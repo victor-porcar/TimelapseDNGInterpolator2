@@ -19,11 +19,13 @@ Using a program like Lightroom or similar, we set the exposure for `Image01.dng`
 
 Now, it would be very nice to have a gradual increase of exposure parameter in a range of images `Image01.dng` to `Image20.dng` as follows:
 
-* `Image01.dng` exposure = 0
-* `Image02.dng` exposure = 0.05
-* `Image03.dng` exposure = 0.1
+* `Image01.dng` exposure = 1
+* `Image02.dng` exposure = 1.05
+* `Image03.dng` exposure = 1.1
 *  ... 
-* `Image20.dng` exposure = 1
+* `Image18.dng` exposure = 1.90
+* `Image19.dng` exposure = 1.95
+* `Image20.dng` exposure = 2
 
 This could be achieved automatically using this tool as follows:
 
