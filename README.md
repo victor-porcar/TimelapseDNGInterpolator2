@@ -1,14 +1,16 @@
 # DNG Images Settings Interpolator
 
-This is a Java tool to interpolate settings values from a list of images in format [DNG](https://www.adobe.com/content/dam/acom/en/products/photoshop/pdfs/dng_spec_1.4.0.0.pdf), which is a open RAW specification created by Adobe.
+Command line tool to interpolate settings values from a list of images in format [DNG](https://www.adobe.com/content/dam/acom/en/products/photoshop/pdfs/dng_spec_1.4.0.0.pdf)
 
-Many image/video processing application do support this format, specially the ones from Adobe  (Lightroom, Photoshop, Premiere..).
+DNG is supported by many image/video application, specially the ones from Adobe  (Lightroom, Photoshop, Premiere..).
 
 Please note that Adobe offers a [free tool](https://helpx.adobe.com/es/photoshop/using/adobe-dng-converter.html) to convert any propietary custom RAW format to DNG
 
-I created this tool for my own use to compute steady transitions in Timelapses, specially with light changing conditions. 
+## Motivation
 
-The project is what I call a *one afternoon* project (written in a few hours), so there is a plenty of room to improve. Said that, I believe it is fully working and it could be useful for somebody else, so I decided to make it publicly available under license Apache 2.0
+I created this tool for my own use to process steady transitions in timelapses when using Adobe Lightroom. Please see [Lightroom and GoPro](Lightroom_and_GoPro.md) and [Lightroom and Nikon](Lightroom_and_Nikon.md)
+
+The project is what I call a *one afternoon* project (written in a few hours) just for fun, so it is basic and there is a plenty of room to improve. Said that, it is fully working and I believe it could be useful for somebody else, so I decided to make it publicly available under license Apache 2.0
 
 
 
@@ -73,11 +75,6 @@ In order to know the name of the setting in the DNG file, the following trick ca
 Edit the setting you want to know the name with Lightroom (or similar) and set it to a particular value.
 Once the dng file is properly saved, open the dng file with any text editor and you'll see the XMP section as plain text (JSON). Look for the value you set before and you'll see the corresponding name of the setting.
 
-## My Workflow
-
-[Lightroom and GoPro](Lightroom_and_GoPro.md)
-
-[Lightroom and Nikon](Lightroom_and_Nikon.md)
 
 ## Building a new release
 
