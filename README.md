@@ -59,9 +59,9 @@ Once the execution is over, the exposure value for range of images from `Image02
  
 #### Interpolate all settings at once
 
-Use the wildcard * 
+Use --all
 
-`java -jar dng-settings-interpolator-X.X.jar [image_directory] [backup_directory] [file1] [file2] *`
+`java -jar dng-settings-interpolator-X.X.jar [image_directory] [backup_directory] [file1] [file2] -all
  
 #### View all available settings
 

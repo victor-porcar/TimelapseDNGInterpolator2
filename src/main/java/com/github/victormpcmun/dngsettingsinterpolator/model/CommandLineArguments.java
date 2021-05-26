@@ -31,7 +31,7 @@ public class CommandLineArguments {
     }
 
     public boolean isAllSettings() {
-        return argList.get(SETTING_NAMES_POSITION).equals("*");
+        return argList.get(SETTING_NAMES_POSITION).equals("-all");
     }
 
     public String getInitFile() {
