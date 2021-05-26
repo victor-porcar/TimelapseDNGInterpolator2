@@ -44,6 +44,7 @@ Where:
 * `D:\BACKUP` is a folder where the tool will make a copy before changing any file
 * `crs:Exposure2012` is the name of Exposure setting in XMP definitions of the DNG file (see settings chapter below) 
 
+Once the execution is over, the exposure value for range of images from `Image02.dng`  to `Image19.dng` will have been overwritten by the tool as per a linear interpolation function between values 1 (from `Image01.dng` ) and 2 (`Image20.dng`)
 
 
 ## Parameters
