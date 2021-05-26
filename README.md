@@ -1,21 +1,27 @@
 # DNG Images Settings Interpolator
 
-This is a Java tool to interpolate settings from a list of images in format [DNG](https://www.adobe.com/content/dam/acom/en/products/photoshop/pdfs/dng_spec_1.4.0.0.pdf), which is an open RAW specification for images created by Adobe.
+This is a Java tool to interpolate settings values from a list of images in format [DNG](https://www.adobe.com/content/dam/acom/en/products/photoshop/pdfs/dng_spec_1.4.0.0.pdf), which is an open RAW specification for images created by Adobe.
 
-I created for my own use to have steady transitions in timelapses, specially with light changing conditions. The tool is a *one day* project just for fun 😊. Said that, I believe it could be useful for somebody else, so I make it publicly available under license Apache 2.0
+Many image/video processing application do support this format, specially the ones from Adobe  (Lightroom, Photoshop, Premiere..).
 
-Please note that Adobe offers a [free tool](https://helpx.adobe.com/es/photoshop/using/adobe-dng-converter.html) to convert any RAW custom format to DNG
+Please note that Adobe offers a [free tool](https://helpx.adobe.com/es/photoshop/using/adobe-dng-converter.html) to convert any propietary custom RAW format to DNG
+
+I created this tool for my own use to have steady transitions in timelapses, specially with light changing conditions. 
+
+The project is what I call a *one afternoon* project (written in a few hours), so there is a plenty of room to improve. Said that, I believe it is fully working and it could be useful for somebody else, so I decided to make it publicly available under license Apache 2.0
+
+
 
  
 ## How it works
 
-Let's suppose there is a list of consecutives images in dng format from a timelapse in a directory
+Let's suppose there is a list of consecutives images in dng format from a timelapse in the directory `D:\IMAGES`:
 
 `Image01.dng` `Image02.dng` `Image03.dng` `Image04.dng` `Image05.dng` ... `Image20.dng` ... `Image99.dng`
 
-At this point all images has the "exposure" parameter set to 0 (just as it is taken from the camera)
+At this point the setting exposure is set to 0 for all images (just as it is taken from the camera)
 
-Using a program like Lightroom or similar, we set the exposure for `Image01.dng`=1 and for `Image20.dng`=2
+Using a program like Lightroom or similar, the exposure for `Image01.dng` is set to `1`  and for `Image20.dng` is set to `2`
 
 Now, it would be very nice to have a gradual increase of exposure parameter in a range of images `Image01.dng` to `Image20.dng` as follows:
 
