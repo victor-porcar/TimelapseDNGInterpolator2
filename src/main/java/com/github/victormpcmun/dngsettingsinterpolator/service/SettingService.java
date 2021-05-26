@@ -17,7 +17,6 @@ public class SettingService {
 
 
     public String getSettingValueFromFile(String filePath, String settingName)  {
-
         DNGFile dngFile = dngFileService.splitDNGFile(filePath);
         String xmp = dngFile.getXmpContentAsString();
         return StringUtil.inBetweenExcluding(xmp,settingName+"=\"", "\"");

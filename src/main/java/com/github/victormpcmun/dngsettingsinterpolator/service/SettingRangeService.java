@@ -9,7 +9,6 @@ import java.util.List;
 
 public class SettingRangeService {
 
-
     public static final SettingRangeService INSTANCE = new SettingRangeService();
 
     public static final int DECIMALS = 2;
@@ -26,26 +25,22 @@ public class SettingRangeService {
             String initValue = settingService.getSettingValueFromFile(path + File.separator + initFile, setting);
             String endValue = settingService.getSettingValueFromFile(path + File.separator + endFile, setting);
 
-            if (initValue==null) {
-                messageService.message("Setting " + setting + " is not defined in file " + initFile);
-                continue;
+            if (hasToCalculateSetting(initValue, endValue)) {
+                settingRangeList.add(new SettingRange(setting, initValue, endValue, DECIMALS));
+            } else {
+                messageService.message(
+                        "Skipping setting " + setting + " because its value is not defined in " + initFile + " or " + endFile + " or both are the same");
             }
 
-            if (endValue==null) {
-                messageService.message("Setting " + setting + " is not defined in file " + endFile);
-                continue;
-            }
-
-            if (initValue.equals(endValue)) {
-                messageService.message("Setting " + setting + " does not change");
-                continue;
-            }
-
-            settingRangeList.add(new SettingRange(setting, initValue, endValue, DECIMALS));
 
 
         }
         return settingRangeList;
+    }
+
+
+    private boolean hasToCalculateSetting(String initValue, String endValue)  {
+        return initValue==null || endValue==null || initValue.equals(endValue);
     }
 
 }

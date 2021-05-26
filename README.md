@@ -75,9 +75,9 @@ Once the dng file is properly saved, open the dng file with any text editor and 
 
 ## My Workflow
 
-[Lightroom and GoPro](LIGHTROOM_and_GOPRO.md)
+[Lightroom and GoPro](Lightroom_and_GoPro.md)
 
-[Lightroom and Nikon](LIGHTROOM_and_NIKON.md)
+[Lightroom and Nikon](Lightroom_and_Nikon.md)
 
 ## Building a new release
 

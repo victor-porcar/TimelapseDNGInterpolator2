@@ -12,39 +12,50 @@ public class DirectoryService {
 
     public List<String> getFilesPathInBetween(String workingDirectory, String initFileName, String endFileName) {
 
-        List<File> listOfFiles = getFilesInDirectory(workingDirectory);
-        List<String> stringList = new ArrayList<>();
+        List<String> filesNamesInDirectory = getFilesNamesInDirectory(workingDirectory);
 
-        for (File file : listOfFiles) {
-            stringList.add(file.getName().toLowerCase());
-        }
-
-
-        int indexInitFileName = stringList.indexOf(initFileName.toLowerCase());
-        int indexEndFileName = stringList.indexOf(endFileName.toLowerCase());
+        int indexInitFileName = filesNamesInDirectory.indexOf(initFileName.toLowerCase());
+        int indexEndFileName = filesNamesInDirectory.indexOf(endFileName.toLowerCase());
 
         if (indexInitFileName<0 || indexEndFileName<0) {
             executionService.abortError("Init file Or End file does not exist");
         }
 
-        List<String> subString = stringList.subList(indexInitFileName, indexEndFileName+1);
-        return subString;
+        List<String> listOfFilesInRange = filesNamesInDirectory.subList(indexInitFileName, indexEndFileName+1);
+        return listOfFilesInRange;
+    }
+
+
+    private List<String> getFilesNamesInDirectory(String directoryPath) {
+
+        List<File> listOfFiles = getFilesInDirectory(directoryPath);
+        List<String> stringList = new ArrayList<>();
+
+        for (File file : listOfFiles) {
+            stringList.add(file.getName().toLowerCase());
+        }
+        return stringList;
     }
 
 
     private List<File> getFilesInDirectory(String directoryPath) {
         List<File> fileList = new ArrayList<>();
         File folder = new File(directoryPath);
-        File[] listOfFiles = folder.listFiles();
-        if (listOfFiles!=null) {
-            Arrays.sort(listOfFiles);
-
-            for (File file : listOfFiles) {
-                if (file.isFile()) {
-                    fileList.add(file);
-                }
-            }
+        File[] arrayOfFiles = folder.listFiles();
+        if (arrayOfFiles!=null) {
+            fileList.addAll(toFileList(arrayOfFiles));
         }
         return fileList;
+    }
+
+    private List<File> toFileList(File[] fileArray) {
+        List<File> listOfFiles = new ArrayList<>();
+        Arrays.sort(fileArray);
+        for (File file : fileArray) {
+            if (file.isFile()) {
+                listOfFiles.add(file);
+            }
+        }
+        return listOfFiles;
     }
 }

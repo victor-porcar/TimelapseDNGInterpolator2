@@ -5,6 +5,7 @@ import com.github.victormpcmun.dngsettingsinterpolator.model.CommandLineArgument
 import com.github.victormpcmun.dngsettingsinterpolator.service.ExecutionService;
 
 public class DNGSettingsInterpolator {
+
     public static void main(String[] args) {
 
         ExecutionService executionService = new ExecutionService();

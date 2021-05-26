@@ -1,5 +1,3 @@
-crs:Version
-crs:ProcessVersion
 crs:Temperature
 crs:Tint
 crs:Saturation

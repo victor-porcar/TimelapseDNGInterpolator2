@@ -14,7 +14,6 @@ public class ByteArrayService {
 
     public  int indexOf(int from, byte[] data, byte[] pattern) {
         int[] failure = failure(pattern);
-
         int j = 0;
 
         for (int index = from; index < data.length; index++) {
@@ -34,8 +33,8 @@ public class ByteArrayService {
 
     private int[] failure(byte[] pattern) {
         int[] failure = new int[pattern.length];
-
         int j = 0;
+
         for (int i = 1; i < pattern.length; i++) {
             while (j>0 && pattern[j] != pattern[i]) {
                 j = failure[j - 1];
@@ -45,7 +44,6 @@ public class ByteArrayService {
             }
             failure[i] = j;
         }
-
         return failure;
     }
 

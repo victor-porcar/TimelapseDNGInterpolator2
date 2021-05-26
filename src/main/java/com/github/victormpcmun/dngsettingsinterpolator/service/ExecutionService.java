@@ -7,6 +7,7 @@ import com.github.victormpcmun.dngsettingsinterpolator.model.Settings;
 import java.util.List;
 
 public class ExecutionService {
+
     public static final ExecutionService INSTANCE = new ExecutionService();
     private static final String ALL_PROPERTIES_FILE = "allProperties.txt";
 
@@ -47,14 +48,18 @@ public class ExecutionService {
 
         for (int fileIndex=0; fileIndex<filesCount;fileIndex++) {
             String fileName = files.get(fileIndex);
-
             backupService.backupFile(workingDirectory, fileName, backupDirectory);
-            Settings settings = interpolatorService.calculateInterpolatedSettings(settingRangeList,filesCount, fileIndex);
-
-            settingService.changeSettingValueInFile(workingDirectory, fileName, settings);
-            messageService.message("File => " + fileName + " " + settings);
+            processFile(workingDirectory, fileName, settingRangeList, filesCount, fileIndex);
         }
         messageService.message("End => " + "Total files updated:" + filesCount);
+    }
+
+
+
+    private void processFile(String workingDirectory, String fileName, List<SettingRange> settingRangeList,  int filesCount, int fileIndex) {
+        Settings settings = interpolatorService.calculateInterpolatedSettings(settingRangeList, filesCount, fileIndex);
+        settingService.changeSettingValueInFile(workingDirectory, fileName, settings);
+        messageService.message("File => " + fileName + " " + settings);
     }
 
 
@@ -78,5 +83,4 @@ public class ExecutionService {
     public void abortNoError() {
         System.exit(1);
     }
-
 }
