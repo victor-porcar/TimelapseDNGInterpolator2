@@ -1,6 +1,6 @@
 # DNG Images Settings Interpolator
 
-This is a Java tool to interpolate settings values from a list of images in format [DNG](https://www.adobe.com/content/dam/acom/en/products/photoshop/pdfs/dng_spec_1.4.0.0.pdf), which is an open RAW specification for images created by Adobe.
+This is a Java tool to interpolate settings values from a list of images in format [DNG](https://www.adobe.com/content/dam/acom/en/products/photoshop/pdfs/dng_spec_1.4.0.0.pdf), which is a open RAW specification created by Adobe.
 
 Many image/video processing application do support this format, specially the ones from Adobe  (Lightroom, Photoshop, Premiere..).
 
