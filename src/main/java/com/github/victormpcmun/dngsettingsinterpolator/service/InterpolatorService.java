@@ -22,10 +22,10 @@ public class InterpolatorService {
         DECIMAL_FORMAT_MAP.put(1,new DecimalFormat("#.#"));
         DECIMAL_FORMAT_MAP.put(2,new DecimalFormat("#.##"));
 
+        DECIMAL_FORMAT_MAP.get(0).setRoundingMode(RoundingMode.UP);
         DECIMAL_FORMAT_MAP.get(1).setRoundingMode(RoundingMode.UP);
         DECIMAL_FORMAT_MAP.get(2).setRoundingMode(RoundingMode.UP);
     }
-
 
 
     public Settings calculateInterpolatedSettings(List<SettingRange> settingRangeList, int totalElements, int indexElement) {

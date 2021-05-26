@@ -1,11 +1,10 @@
 package com.github.victormpcmun.dngsettingsinterpolator.service;
 
-import com.github.victormpcmun.dngsettingsinterpolator.util.StringUtil;
-import com.github.victormpcmun.dngsettingsinterpolator.model.Settings;
 import com.github.victormpcmun.dngsettingsinterpolator.model.DNGFile;
+import com.github.victormpcmun.dngsettingsinterpolator.model.Settings;
+import com.github.victormpcmun.dngsettingsinterpolator.util.StringUtil;
 
 import java.io.File;
-
 
 public class SettingService {
 
@@ -22,7 +21,6 @@ public class SettingService {
         DNGFile dngFile = dngFileService.splitDNGFile(filePath);
         String xmp = dngFile.getXmpContentAsString();
         return StringUtil.inBetween(xmp,settingName+"=\"", "\"");
-
     }
 
 

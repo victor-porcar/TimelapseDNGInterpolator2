@@ -9,7 +9,7 @@ public class ByteArrayService {
 
     public static final ByteArrayService INSTANCE = new ByteArrayService();
 
-    //he Knuth-Morris-Pratt Pattern Matching Algorithm
+    // The Knuth-Morris-Pratt Pattern Matching Algorithm
     // https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm
 
     public  int indexOf(int from, byte[] data, byte[] pattern) {
@@ -17,15 +17,15 @@ public class ByteArrayService {
 
         int j = 0;
 
-        for (int i = from; i < data.length; i++) {
-            while (j > 0 && pattern[j] != data[i]) {
+        for (int index = from; index < data.length; index++) {
+            while (j > 0 && pattern[j] != data[index]) {
                 j = failure[j - 1];
             }
-            if (pattern[j] == data[i]) {
+            if (pattern[j] == data[index]) {
                 j++;
             }
             if (j == pattern.length) {
-                return i - pattern.length + 1;
+                return index - pattern.length + 1;
             }
         }
         return -1;

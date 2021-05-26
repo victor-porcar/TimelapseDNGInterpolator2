@@ -1,9 +1,8 @@
 package com.github.victormpcmun.dngsettingsinterpolator;
 
-import com.github.victormpcmun.dngsettingsinterpolator.service.ExecutionService;
-
 import com.github.victormpcmun.dngsettingsinterpolator.exception.ExecutionException;
 import com.github.victormpcmun.dngsettingsinterpolator.model.CommandLineArguments;
+import com.github.victormpcmun.dngsettingsinterpolator.service.ExecutionService;
 
 public class DNGSettingsInterpolator {
     public static void main(String[] args) {

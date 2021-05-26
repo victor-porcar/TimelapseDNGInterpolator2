@@ -4,7 +4,6 @@ import com.github.victormpcmun.dngsettingsinterpolator.model.SettingRange;
 
 import java.io.File;
 import java.util.ArrayList;
-
 import java.util.List;
 
 

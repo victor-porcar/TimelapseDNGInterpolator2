@@ -7,8 +7,8 @@ import com.github.victormpcmun.dngsettingsinterpolator.model.Settings;
 import java.util.List;
 
 public class ExecutionService {
-    public static final ExecutionService INSTANCE = new ExecutionService();
-    public static final String ALL_PROPERTIES_FILE = "allProperties.txt";
+    private static final ExecutionService INSTANCE = new ExecutionService();
+    private static final String ALL_PROPERTIES_FILE = "allProperties.txt";
 
     ResourcesService resourcesService = ResourcesService.INSTANCE;
     DirectoryService directoryService = DirectoryService.INSTANCE;
@@ -45,15 +45,16 @@ public class ExecutionService {
         int filesCount = files.size();
 
         for (int fileIndex=0; fileIndex<filesCount;fileIndex++) {
-            backupService.backupFile(workingDirectory, files.get(fileIndex), backupDirectory);
-            Settings settings = interpolatorService.calculateInterpolatedSettings(settingRangeList,filesCount, fileIndex);
             String fileName = files.get(fileIndex);
+
+            backupService.backupFile(workingDirectory, fileName, backupDirectory);
+            Settings settings = interpolatorService.calculateInterpolatedSettings(settingRangeList,filesCount, fileIndex);
+
             settingService.changeSettingValueInFile(workingDirectory, fileName, settings);
             System.out.println("File => " + fileName + " " + settings);
         }
         System.out.println("End => " + "Total files updated:" + filesCount);
     }
-
 
 
     private List<String> calculateSettingNames(CommandLineArguments commandLineArguments) {
