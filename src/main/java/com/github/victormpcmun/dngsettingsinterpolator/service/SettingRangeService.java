@@ -40,7 +40,7 @@ public class SettingRangeService {
 
 
     private boolean hasToCalculateSetting(String initValue, String endValue)  {
-        return initValue==null || endValue==null;
+        return initValue!=null && endValue!=null;
     }
 
 }
