@@ -6,7 +6,7 @@ Many image/video processing application do support this format, specially the on
 
 Please note that Adobe offers a [free tool](https://helpx.adobe.com/es/photoshop/using/adobe-dng-converter.html) to convert any propietary custom RAW format to DNG
 
-I created this tool for my own use to have steady transitions in timelapses, specially with light changing conditions. 
+I created this tool for my own use to compute steady transitions in Timelapses, specially with light changing conditions. 
 
 The project is what I call a *one afternoon* project (written in a few hours), so there is a plenty of room to improve. Said that, I believe it is fully working and it could be useful for somebody else, so I decided to make it publicly available under license Apache 2.0
 
