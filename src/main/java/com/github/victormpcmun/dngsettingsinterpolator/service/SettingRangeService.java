@@ -29,7 +29,7 @@ public class SettingRangeService {
                 settingRangeList.add(new SettingRange(setting, initValue, endValue, DECIMALS));
             } else {
                 messageService.message(
-                        "Skipping setting " + setting + " because its value is not defined in " + initFile + " or " + endFile ;
+                        "Skipping setting " + setting + " because its value is not defined in " + initFile + " or " + endFile);
             }
 
 
