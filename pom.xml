@@ -7,7 +7,6 @@
     <version>1.0</version>
     <packaging>jar</packaging>
 
-
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
@@ -24,12 +23,6 @@
         </developer>
     </developers>
 
-    <!--scm>
-        <connection>scm:git:git://github.com/victormpcmun/TimelapseDNGInterpolator2.git</connection>
-        <developerConnection>scm:git:https://github.com/victormpcmun/TimelapseDNGInterpolator2.git</developerConnection>
-        <url>http://github.com/victormpcmun/TimelapseDNGInterpolator2/tree/master</url>
-        <tag>1.1</tag>
-    </scm -->
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -37,9 +30,19 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <dependencies>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.1</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
     <build>
         <plugins>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -53,10 +56,6 @@
                     <outputDirectory>./bin</outputDirectory>
                 </configuration>
             </plugin>
-
-
-
-
         </plugins>
     </build>
 </project>

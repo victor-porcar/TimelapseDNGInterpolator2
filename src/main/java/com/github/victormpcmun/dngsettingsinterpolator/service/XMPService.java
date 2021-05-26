@@ -54,7 +54,7 @@ public class XMPService {
             return propertyAndValue;
         }
 
-        String inBetweenQuotes = StringUtil.inBetween(propertyAndValue,"=\"", "\"");
+        String inBetweenQuotes = StringUtil.inBetweenExcluding(propertyAndValue,"=\"", "\"");
         String newInBetweenQuotes;
         if (charactersIncrementSize>0) {
             // add

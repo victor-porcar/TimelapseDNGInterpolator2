@@ -20,7 +20,7 @@ public class SettingService {
 
         DNGFile dngFile = dngFileService.splitDNGFile(filePath);
         String xmp = dngFile.getXmpContentAsString();
-        return StringUtil.inBetween(xmp,settingName+"=\"", "\"");
+        return StringUtil.inBetweenExcluding(xmp,settingName+"=\"", "\"");
     }
 
 

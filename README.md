@@ -82,7 +82,7 @@ Once the dng file is properly saved, open the dng file with any text editor and 
 ## Building a new release
 
 * develop new code and increase manually version in pom.xml
-* `mvn clean package`
+* `mvn clean verify package`
 * `git add .`
 * `git commit -m "comment"`
 * `git push origin master`

@@ -8,10 +8,15 @@ import java.util.List;
 
 
 public class SettingRangeService {
+
+
     public static final SettingRangeService INSTANCE = new SettingRangeService();
+
     public static final int DECIMALS = 2;
 
     SettingService settingService = SettingService.INSTANCE;
+    MessageService messageService = MessageService.INSTANCE;
+
 
 
     public List<SettingRange> calculateSettingRangeList(String path, String initFile, String endFile, List<String> settingNameList) {
@@ -22,17 +27,17 @@ public class SettingRangeService {
             String endValue = settingService.getSettingValueFromFile(path + File.separator + endFile, setting);
 
             if (initValue==null) {
-                System.out.println("Setting " + setting + " is not defined in file " + initFile);
+                messageService.message("Setting " + setting + " is not defined in file " + initFile);
                 continue;
             }
 
             if (endValue==null) {
-                System.out.println("Setting " + setting + " is not defined in file " + endFile);
+                messageService.message("Setting " + setting + " is not defined in file " + endFile);
                 continue;
             }
 
             if (initValue.equals(endValue)) {
-                System.out.println("Setting " + setting + " does not change");
+                messageService.message("Setting " + setting + " does not change");
                 continue;
             }
 

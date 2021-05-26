@@ -2,7 +2,7 @@ package com.github.victormpcmun.dngsettingsinterpolator.util;
 
 public  class StringUtil {
 
-    public static String inBetween(String s, String s1, String s2) {
+    public static String inBetweenExcluding(String s, String s1, String s2) {
         int indexS1 = s.indexOf(s1);
         if (indexS1<0) {
             return null;
@@ -35,7 +35,7 @@ public  class StringUtil {
     }
 
     public static String inBetweenIncluding(String s, String s1, String s2) {
-        return s1 + inBetween(s, s1, s2) + s2;
+        return s1 + inBetweenExcluding(s, s1, s2) + s2;
     }
 
 
