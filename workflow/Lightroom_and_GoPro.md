@@ -30,7 +30,10 @@ Workflow:
 4) Go to  "Library" Lightroom panel select all images of the timelapse (List A, List B and List c), then Menu Metadata -> "Update DNG previews & Metadata": this operation will update the DNG files with the proper settings
 5) Execute this tool as follows:
 
+`java -jar dng-settings-interpolator-X.X.jar D:\IMAGES D:\BACKUP -- files <first file of list B> <last file of list b>`
 
+6) Once the tool has finished, in the Library panel of Lightroom select the directory having the images and select 
+ ![syncronize folder](images/syncronizeFolder.jpg)
 
 
 ## Setting for images with full moon
