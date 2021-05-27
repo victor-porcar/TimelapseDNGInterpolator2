@@ -81,7 +81,7 @@ Once the dng file is properly saved, open the dng file with any text editor and 
 
  <br />
 
-## Building a new release
+# Building a new release
 
 * develop new code and increase manually version in pom.xml
 * `mvn clean verify package`
