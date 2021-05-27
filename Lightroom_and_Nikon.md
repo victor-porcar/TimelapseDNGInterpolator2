@@ -1,3 +1,0 @@
-# Lightroom and NIKON
-
-TODO
