@@ -6,40 +6,49 @@ import java.util.List;
 
 public class CommandLineArguments {
 
-    private static final Integer WORKING_DIRECTORY_POSITION =0;
-    private static final Integer BACKUP_DIRECTORY_POSITION =1;
-    private static final Integer INIT_FILE_POSITION =2;
-    private static final Integer END_FILE_POSITION =3;
-    private static final Integer SETTING_NAMES_POSITION =4;
-    private static final Integer VIEW_SETTINGS_POSITION =0;
+    private static final String FILES = "--files";
+    private static final String SETTINGS = "--settings";
+    private static final String VIEW_ALL_SETTINGS = "--view_all_settings";
 
-    private final List<String>  argList = new ArrayList<>();
-    private final boolean parametersOK;
+
+    private static final Integer WORKING_DIRECTORY_POSITION =0;
+    private static final Integer VIEW_ALL_SETTINGS_POSITION =0;
+    private static final Integer BACKUP_DIRECTORY_POSITION =1;
+
+    private static final Integer BEGIN_FILES_OR_SETTINGS_ARGS_POSITION = BACKUP_DIRECTORY_POSITION + 1;
+
+
+    private List<String> argList;
+    private List<String> fileNames;
+    private List<String> settingsName;
+
 
     public CommandLineArguments(String[] argsArray) {
+        argList = new ArrayList<>();
         Collections.addAll(argList, argsArray);
-        parametersOK = (argList.size()==1 && argList.get(VIEW_SETTINGS_POSITION).equals("--settings")) || (argList.size()>=(SETTING_NAMES_POSITION +1));
-
+        fileNames = new ArrayList<>();
+        settingsName = new ArrayList<>();
+        analyzeArgs(argList);
     }
 
     public boolean isParametersOK() {
-        return parametersOK;
+        return argList.size()>=5;
     }
 
     public boolean isViewSettings() {
-        return argList.get(VIEW_SETTINGS_POSITION).equals("--settings");
+        return argList.get(VIEW_ALL_SETTINGS_POSITION).equals(VIEW_ALL_SETTINGS);
     }
 
     public boolean isAllSettings() {
-        return argList.get(SETTING_NAMES_POSITION).equals("-all");
+        return settingsName.isEmpty();
     }
 
     public List<InterpolationBlock> getInterpolationBlockList() {
-        return null;
+        return getInterpolationBlockList(fileNames);
     }
 
     public List<String> getSettingNames() {
-        return argList.subList(SETTING_NAMES_POSITION,argList.size());
+        return settingsName;
     }
 
     public String getWorkingDirectory() {
@@ -48,6 +57,43 @@ public class CommandLineArguments {
 
     public String getBackupDirectory() {
         return argList.get(BACKUP_DIRECTORY_POSITION);
+    }
+
+
+    private void analyzeArgs(List<String> argsList) {
+        boolean fileSeries=false;
+        boolean settingSeries=false;
+        for (int index = BEGIN_FILES_OR_SETTINGS_ARGS_POSITION; index < argsList.size(); index++) {
+            String arg = argsList.get(index);
+            if (FILES.equals(arg)) {
+                fileSeries=true;
+                settingSeries=false;
+            }
+
+            if (SETTINGS.equals(arg)) {
+                fileSeries=false;
+                settingSeries=true;
+            }
+
+            if (fileSeries) {
+                fileNames.add(arg);
+            }
+
+            if (settingSeries) {
+                settingsName.add(arg);
+            }
+        }
+    }
+
+    private List<InterpolationBlock> getInterpolationBlockList(List<String> fileNames) {
+        List<InterpolationBlock> interpolationBlockList = new ArrayList<>();
+        int size = fileNames.size();
+        for (int index=0; index < size; index++) {
+            if (index<size-1) {
+                interpolationBlockList.add(new InterpolationBlock(fileNames.get(index), fileNames.get(index+1)));
+            }
+        }
+        return interpolationBlockList;
     }
 
 }

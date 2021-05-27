@@ -19,6 +19,7 @@ public class ExecutionService {
     BackupService backupService = BackupService.INSTANCE;
     SettingRangeService settingRangeService = SettingRangeService.INSTANCE;
     MessageService messageService = MessageService.INSTANCE;
+    FileValidationService fileValidationService = FileValidationService.INSTANCE;
 
     public void execute(CommandLineArguments commandLineArguments) {
         if (!commandLineArguments.isParametersOK()) {
@@ -30,13 +31,13 @@ public class ExecutionService {
             abortNoError();
         }
 
-        processBlock(commandLineArguments);
+        go(commandLineArguments);
     }
 
+    private void go(CommandLineArguments commandLineArguments) {
 
-    private void processBlock(CommandLineArguments commandLineArguments) {
-
-        List<InterpolationBlock>  interpolationBlockList = commandLineArguments.getInterpolationBlockList();
+        List<InterpolationBlock> interpolationBlockList = commandLineArguments.getInterpolationBlockList();
+        fileValidationService.validateAllFilesExistOrAbort(commandLineArguments.getWorkingDirectory(), interpolationBlockList);
 
         for (InterpolationBlock interpolationBlock: interpolationBlockList) {
             processBlock(commandLineArguments, interpolationBlock);
@@ -53,9 +54,9 @@ public class ExecutionService {
         String workingDirectory = commandLineArguments.getWorkingDirectory();
         String backupDirectory = commandLineArguments.getBackupDirectory();
 
-        List<SettingRange> settingRangeList = settingRangeService.calculateSettingRangeList(workingDirectory, initFile, endFile, settingNamesList);
+        List<SettingRange> settingRangeList = settingRangeService.calculateSettingRangeList(workingDirectory, interpolationBlock, settingNamesList);
 
-        List<String> files = directoryService.getFilesPathInBetween(workingDirectory,initFile, endFile);
+        List<String> files = directoryService.getFilesPathInBetween(workingDirectory,interpolationBlock);
         int filesCount = files.size();
 
         messageService.message("Procession block from  " + initFile + " to " + endFile);
@@ -69,14 +70,11 @@ public class ExecutionService {
     }
 
 
-
     private void processFile(String workingDirectory, String fileName, List<SettingRange> settingRangeList,  int filesCount, int fileIndex) {
         Settings settings = interpolatorService.calculateInterpolatedSettings(settingRangeList, filesCount, fileIndex);
         settingService.changeSettingValueInFile(workingDirectory, fileName, settings);
         messageService.message("File => " + fileName + " " + settings);
     }
-
-
 
 
     private List<String> calculateSettingNames(CommandLineArguments commandLineArguments) {

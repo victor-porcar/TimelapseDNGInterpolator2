@@ -5,19 +5,17 @@ public class InterpolationBlock {
     String initFile;
     String endFile;
 
-    public String getInitFile() {
-        return initFile;
+    public InterpolationBlock(String initFile, String endFile) {
+        this.initFile = initFile;
+        this.endFile = endFile;
     }
 
-    public void setInitFile(String initFile) {
-        this.initFile = initFile;
+    public String getInitFile() {
+        return initFile;
     }
 
     public String getEndFile() {
         return endFile;
     }
 
-    public void setEndFile(String endFile) {
-        this.endFile = endFile;
-    }
 }

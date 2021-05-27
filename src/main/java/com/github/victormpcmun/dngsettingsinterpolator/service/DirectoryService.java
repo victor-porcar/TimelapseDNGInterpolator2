@@ -1,5 +1,7 @@
 package com.github.victormpcmun.dngsettingsinterpolator.service;
 
+import com.github.victormpcmun.dngsettingsinterpolator.model.InterpolationBlock;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,12 +12,12 @@ public class DirectoryService {
     public static final DirectoryService INSTANCE = new DirectoryService();
     public final ExecutionService executionService = ExecutionService.INSTANCE;
 
-    public List<String> getFilesPathInBetween(String workingDirectory, String initFileName, String endFileName) {
+    public List<String> getFilesPathInBetween(String workingDirectory, InterpolationBlock interpolationBlock) {
 
         List<String> filesNamesInDirectory = getFilesNamesInDirectory(workingDirectory);
 
-        int indexInitFileName = filesNamesInDirectory.indexOf(initFileName.toLowerCase());
-        int indexEndFileName = filesNamesInDirectory.indexOf(endFileName.toLowerCase());
+        int indexInitFileName = filesNamesInDirectory.indexOf(interpolationBlock.getInitFile().toLowerCase());
+        int indexEndFileName = filesNamesInDirectory.indexOf(interpolationBlock.getEndFile().toLowerCase());
 
         if (indexInitFileName<0 || indexEndFileName<0) {
             executionService.abortError("Init file Or End file does not exist");

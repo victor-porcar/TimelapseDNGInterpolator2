@@ -1,5 +1,6 @@
 package com.github.victormpcmun.dngsettingsinterpolator.service;
 
+import com.github.victormpcmun.dngsettingsinterpolator.model.InterpolationBlock;
 import com.github.victormpcmun.dngsettingsinterpolator.model.SettingRange;
 
 import java.io.File;
@@ -18,7 +19,11 @@ public class SettingRangeService {
 
 
 
-    public List<SettingRange> calculateSettingRangeList(String path, String initFile, String endFile, List<String> settingNameList) {
+    public List<SettingRange> calculateSettingRangeList(String path, InterpolationBlock interpolationBlock, List<String> settingNameList) {
+
+        String initFile = interpolationBlock.getInitFile();
+        String endFile = interpolationBlock.getEndFile();
+
         List<SettingRange> settingRangeList= new ArrayList<>();
         for (String setting: settingNameList) {
 
