@@ -40,31 +40,22 @@ This is what this tool performs, it interpolates values of settings *between* tw
 Where:
 
 * `dng-settings-interpolator-X.X.jar` is the latest version of the tool (located in `/bin`directory of this repository)
-* `D:\IMAGES` is the folder containing all the **.dng files
-* `D:\BACKUP` is a folder where the tool will make a copy before changing any file
-* --files : it means that subsequent parameters will be the names of files to interpolate (Image01.dng Image20.dng)
-* --settings: it means that subsequent parameters will be the settings to interpolate
-* `crs:Exposure2012` is the name of Exposure setting in XMP definitions of the DNG file (see settings chapter below) 
+* `D:\IMAGES` is the folder containing all the **.DNG files
+* `D:\BACKUP` is a folder where the tool will make a copy before changing anything.
+* --files : it means that subsequent parameters will be the names of files that defines the range to interpolate settings [Image01.dng, Image20.dng]
+* --settings: it means that subsequent parameters will have the name the settings to interpolate.
+* `crs:Exposure2012` is the name of the setting "Exposure" in a DNG file (see how to know the name of the settings below) 
 
 Once the execution is over, the exposure value for range of images from `Image02.dng`  to `Image19.dng` will have been overwritten by the tool as per a linear interpolation function between values 1 (from `Image01.dng` ) and 2 (`Image20.dng`)
 
 
-## Parameters
+## Arguments
 
-
-#### Interpolate a set of settings 
+Broadly speaking, the tool suppors the following arguments:
 
 `java -jar dng-settings-interpolator-X.X.jar [image_directory] [backup_directory] --file [file1] [file2] ... [filen] --settings [setting1 Name] [setting2 name] ... [settingN name]`
 
-It interpolates the following *range* of images
-
-[file1, file2]
-[file2, file3]
-...
-[filen-1, filen]
-
-
-Note: If no --settings argument is provider, the tool will interpolate ALL settings
+Please note that `--settings` is optional, if no --settings argument is provider, the tool will interpolate ALL settings
  
 #### View all available settings
 
@@ -74,13 +65,13 @@ Note: If no --settings argument is provider, the tool will interpolate ALL setti
 
 The list of all available settings is [here](src/main/resources/allProperties.txt)
 
-In order to know the name of the setting in the DNG file, the following trick can be used:
-Edit the setting you want to know the name with Lightroom (or similar) and set it to a particular value.
-Once the dng file is properly saved, open the dng file with any text editor and you'll see the XMP section as plain text (JSON). Look for the value you set before and you'll see the corresponding name of the setting.
+In order to know the name of the setting in a DNG image, the following trick can be used:
+Open the file in Lightroom, change setting you want to know and set it to a particular value.
+Once the DNG file is properly saved, open the file with any text editor and you'll see the XMP section as plain text (JSON). Look for the value you set before and you'll see the corresponding name of the setting.
 
 ### GoPro and Lightroom
 
-[Here](workflow/Lightroom_and_GoPro.md) is the workflow I use to process smooth transitions in Lightroom for GOPRO nightlapses
+[Here](workflow/Lightroom_and_GoPro.md) is an example of the workflow I use to process smooth transitions in Lightroom for GOPRO nightlapses.
 
 
  <br />
