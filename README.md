@@ -41,8 +41,7 @@ Where:
 * `D:\IMAGES` is the folder containing all the **.DNG files
 * `D:\BACKUP` is a folder where the tool will make a copy before changing anything.
 * --files : it means that subsequent parameters will be the names of files that defines the range to interpolate settings [Image01.dng, Image20.dng]
-* --settings: it means that subsequent parameters will have the name the settings to interpolate.
-* `crs:Exposure2012` is the name of the setting "Exposure" in a DNG file (see how to know the name of the settings below) 
+* --settings: it means that subsequent parameters will have the name the settings to interpolate => `crs:Exposure2012` is the name of the setting "Exposure" in a DNG file (see how to know the name of the settings below) 
 
 Once the execution is over, the exposure value for range of images from `Image02.dng`  to `Image19.dng` will have been overwritten by the tool as per a linear interpolation function between values 1 (from `Image01.dng` ) and 2 (`Image20.dng`)
 
