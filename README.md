@@ -87,3 +87,6 @@ Once the dng file is properly saved, open the dng file with any text editor and 
 * `git commit -m "comment"`
 * `git push origin master`
 * the new version of the jar will be in /bin folder
+
+
+# Example: GoPro and LightRoom
