@@ -34,12 +34,8 @@ public class CommandLineArguments {
         return argList.get(SETTING_NAMES_POSITION).equals("-all");
     }
 
-    public String getInitFile() {
-        return argList.get(INIT_FILE_POSITION);
-    }
-
-    public String getEndFile() {
-        return argList.get(END_FILE_POSITION);
+    public List<InterpolationBlock> getInterpolationBlockList() {
+        return null;
     }
 
     public List<String> getSettingNames() {

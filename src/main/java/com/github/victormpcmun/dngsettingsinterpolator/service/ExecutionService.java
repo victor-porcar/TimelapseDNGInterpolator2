@@ -1,6 +1,7 @@
 package com.github.victormpcmun.dngsettingsinterpolator.service;
 
 import com.github.victormpcmun.dngsettingsinterpolator.model.CommandLineArguments;
+import com.github.victormpcmun.dngsettingsinterpolator.model.InterpolationBlock;
 import com.github.victormpcmun.dngsettingsinterpolator.model.SettingRange;
 import com.github.victormpcmun.dngsettingsinterpolator.model.Settings;
 
@@ -29,14 +30,25 @@ public class ExecutionService {
             abortNoError();
         }
 
-        go(commandLineArguments);
+        processBlock(commandLineArguments);
     }
 
 
-    private void go(CommandLineArguments commandLineArguments) {
+    private void processBlock(CommandLineArguments commandLineArguments) {
 
-        String initFile = commandLineArguments.getInitFile();
-        String endFile = commandLineArguments.getEndFile();
+        List<InterpolationBlock>  interpolationBlockList = commandLineArguments.getInterpolationBlockList();
+
+        for (InterpolationBlock interpolationBlock: interpolationBlockList) {
+            processBlock(commandLineArguments, interpolationBlock);
+        }
+    }
+
+
+    private void processBlock(CommandLineArguments commandLineArguments, InterpolationBlock interpolationBlock) {
+
+        String initFile = interpolationBlock.getInitFile();
+        String endFile = interpolationBlock.getEndFile();
+
         List<String> settingNamesList = calculateSettingNames(commandLineArguments);
         String workingDirectory = commandLineArguments.getWorkingDirectory();
         String backupDirectory = commandLineArguments.getBackupDirectory();
@@ -45,6 +57,8 @@ public class ExecutionService {
 
         List<String> files = directoryService.getFilesPathInBetween(workingDirectory,initFile, endFile);
         int filesCount = files.size();
+
+        messageService.message("Procession block from  " + initFile + " to " + endFile);
 
         for (int fileIndex=0; fileIndex<filesCount;fileIndex++) {
             String fileName = files.get(fileIndex);
@@ -61,6 +75,8 @@ public class ExecutionService {
         settingService.changeSettingValueInFile(workingDirectory, fileName, settings);
         messageService.message("File => " + fileName + " " + settings);
     }
+
+
 
 
     private List<String> calculateSettingNames(CommandLineArguments commandLineArguments) {

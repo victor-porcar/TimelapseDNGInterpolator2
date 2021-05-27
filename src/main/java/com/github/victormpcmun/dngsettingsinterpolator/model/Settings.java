@@ -14,6 +14,6 @@ public class Settings {
 
     @Override
     public String toString() {
-        return "(" + settingList + ")";
+        return "[" + settingList + ")";
     }
 }
