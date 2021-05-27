@@ -1,25 +1,25 @@
 # DNG Images Settings Interpolator
 
-Command line tool to interpolate settings values from a list of images in format [DNG](https://www.adobe.com/content/dam/acom/en/products/photoshop/pdfs/dng_spec_1.4.0.0.pdf)
+Command line tool to interpolate settings values from a list of images in image format [DNG]    (https://www.adobe.com/content/dam/acom/en/products/photoshop/pdfs/dng_spec_1.4.0.0.pdf) to process smooth transitions in timelapses.
 
-DNG is supported by many image/video application, specially the ones from Adobe  (Lightroom, Photoshop, Premiere..).
+DNG is supported by many image/video application, specially the Adobe ecosystem  (Lightroom, Photoshop, Premiere..).
 
 Please note that Adobe offers a [free tool](https://helpx.adobe.com/es/photoshop/using/adobe-dng-converter.html) to convert any propietary custom RAW format to DNG
 
 ## Motivation
 
-I created this tool for my own use to process smooth transitions in timelapses when using Adobe Lightroom, but it can be used with any other tool supporting DNG.
+I created this tool for my own use to process timelapses when using Adobe Lightroom, but it can be used with any other application supporting DNG.
 
-Note that this project is what I call a *one afternoon project* (written in a few hours) just for fun, so it is basic and there is plenty of room to improve. Said that, it is fully working and I believe it could be useful for somebody else, so I decided to make it publicly available under license Apache 2.0, which means you can do practically whatever you want with the code. If you feel like to improve it, please do it!.
+Note that I created this project just for fun in my spare time, it is basic and there is plenty of room to improve. Said that, it is fully working and I believe it could be useful for somebody else, so I decided to make it publicly available under license Apache 2.0. If you feel like to extend it, please do it!.
 
  
 ## How it works
 
-Let's suppose there is a list of consecutives images in dng format from a timelapse in a directory `D:\IMAGES`:
+Let's suppose there is a list of consecutives images in DNG format from a timelapse in a directory `D:\IMAGES`:
 
 `Image01.dng` `Image02.dng` `Image03.dng` `Image04.dng` `Image05.dng` ... `Image20.dng` ... `Image99.dng`
 
-At this point all settings are set to 0 for all images (as it is taken from the camera)
+At this point all images settings are set to 0 for all images (as it is taken from the camera)
 
 Using a program like Lightroom or similar,  we set some settings in `Image01.dng` for example exposure is set to 1 and `Image20.dng` is set to 2
 
