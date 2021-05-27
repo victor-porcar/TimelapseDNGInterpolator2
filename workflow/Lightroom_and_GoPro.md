@@ -1,7 +1,5 @@
 # Lightroom and GOPRO
 
-# Lightroom and GOPRO
-
 Let's configure the GoPro 8 to shoot a nighlapse
 
 * Time Lapse => Night lapse
@@ -16,7 +14,8 @@ Let's configure the GoPro 8 to shoot a nighlapse
 * Sharpness: Medium
 * Color: Flat
 
+## Setting for images with full moon
 
 Settings in Develop TAB in Lightroom
 
-![Moon basic](/images//basic_full_moon.jpg)
+![Moon basic](images//basic_full_moon.jpg)
