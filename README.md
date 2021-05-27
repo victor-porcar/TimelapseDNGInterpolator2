@@ -79,6 +79,8 @@ Edit the setting you want to know the name with Lightroom (or similar) and set i
 Once the dng file is properly saved, open the dng file with any text editor and you'll see the XMP section as plain text (JSON). Look for the value you set before and you'll see the corresponding name of the setting.
 
 
+ <br />
+
 ## Building a new release
 
 * develop new code and increase manually version in pom.xml
@@ -88,5 +90,3 @@ Once the dng file is properly saved, open the dng file with any text editor and 
 * `git push origin master`
 * the new version of the jar will be in /bin folder
 
-
-# Example: GoPro and LightRoom
