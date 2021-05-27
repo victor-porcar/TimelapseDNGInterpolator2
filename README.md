@@ -10,7 +10,7 @@ Please note that Adobe offers a [free tool](https://helpx.adobe.com/es/photoshop
 
 I created this tool for my own use to process smooth transitions in timelapses when using Adobe Lightroom, but it can be used with any other tool supporting DNG.
 
-Note that this project is what I call a *one afternoon project* (written in a few hours) just for fun, so it is basic and there is plenty of room to improve. Said that, it is fully working and I believe it could be useful for somebody else, so I decided to make it publicly available under license Apache 2.0, which means you can do practically whatever you want with the code. If you want to improve please feel welcome to do it!.
+Note that this project is what I call a *one afternoon project* (written in a few hours) just for fun, so it is basic and there is plenty of room to improve. Said that, it is fully working and I believe it could be useful for somebody else, so I decided to make it publicly available under license Apache 2.0, which means you can do practically whatever you want with the code. If you feel like to improve it, please do it!.
 
  
 ## How it works
