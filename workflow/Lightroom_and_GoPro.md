@@ -59,7 +59,7 @@ Settings in Develop TAB in Lightroom
 
 
 
-
+![sample](images//sample_moon.jpg) 
 
 
 
@@ -69,3 +69,5 @@ Settings in Develop TAB in Lightroom
 Settings in Develop TAB in Lightroom
 
 ![Moon basic](images//basic_no_moon.jpg) ![Moon basic](images//detail_no_moon.jpg)  ![Moon basic](images/tone_curve_no_moon.jpg)
+
+![sample](images//sample_no_moon.jpg) 
