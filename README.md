@@ -78,6 +78,10 @@ In order to know the name of the setting in the DNG file, the following trick ca
 Edit the setting you want to know the name with Lightroom (or similar) and set it to a particular value.
 Once the dng file is properly saved, open the dng file with any text editor and you'll see the XMP section as plain text (JSON). Look for the value you set before and you'll see the corresponding name of the setting.
 
+### GoPro and Lightroom
+
+Here is the workflow I use to process smooth transitions in GOPRO nightlapses and Lightroom
+
 
  <br />
 
