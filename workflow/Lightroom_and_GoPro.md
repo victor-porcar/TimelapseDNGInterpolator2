@@ -36,7 +36,12 @@ Workflow:
  ![syncronize folder](images/syncronizeFolder.jpg)
 
 
-## Setting for images with full moon
+
+
+
+
+
+# Setting for images with full moon
 
 
 
@@ -45,7 +50,13 @@ Settings in Develop TAB in Lightroom
 ![Moon basic](images//basic_full_moon.jpg) ![Moon basic](images//detail_full_moon.jpg)  ![Moon basic](images/tone_curve_full_moon.jpg)
 
 
-## Setting for images without  moon
+
+
+
+
+
+
+# Setting for images without  moon
 
 Settings in Develop TAB in Lightroom
 
