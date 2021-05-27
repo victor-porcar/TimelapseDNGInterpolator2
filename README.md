@@ -80,7 +80,7 @@ Once the dng file is properly saved, open the dng file with any text editor and 
 
 ### GoPro and Lightroom
 
-Here is the workflow I use to process smooth transitions in GOPRO nightlapses and Lightroom
+[Here](Lightroom_and_GoPro.md) is the workflow I use to process smooth transitions in Lightroom for GOPRO nightlapses
 
 
  <br />
