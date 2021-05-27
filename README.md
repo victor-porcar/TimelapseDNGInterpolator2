@@ -56,7 +56,15 @@ Once the execution is over, the exposure value for range of images from `Image02
 
 `java -jar dng-settings-interpolator-X.X.jar [image_directory] [backup_directory] --file [file1] [file2] ... [filen] --settings [setting1 Name] [setting2 name] ... [settingN name]`
 
-If no --settings argument is provider, the tool will interpolate ALL settings
+It interpolates the following *range* of images
+
+[file1, file2]
+[file2, file3]
+...
+[filen-1, filen]
+
+
+Note: If no --settings argument is provider, the tool will interpolate ALL settings
  
 #### View all available settings
 
