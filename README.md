@@ -55,7 +55,7 @@ Broadly speaking, the tool suppors the following arguments:
 
 `java -jar dng-settings-interpolator-X.X.jar [image_directory] [backup_directory] --file [file1] [file2] ... [filen] --settings [setting1 Name] [setting2 name] ... [settingN name]`
 
-Please note that `--settings` is optional, if no --settings argument is provider, the tool will interpolate ALL settings
+Please note that `--settings` is optional, if not provided, the tool will interpolate ALL settings
  
 #### View all available settings
 
