@@ -16,4 +16,5 @@ public class Settings {
     public String toString() {
         return "[" + settingList + ")";
     }
+
 }

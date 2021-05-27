@@ -9,20 +9,23 @@ public class FileValidationService {
     public static final FileValidationService INSTANCE = new FileValidationService();
 
     private FileService fileService = FileService.INSTANCE;
-    private ExecutionService executionService = ExecutionService.INSTANCE;
+    private MessageService messageService = MessageService.INSTANCE;
 
-    public void validateAllFilesExistOrAbort(String directory, List<InterpolationBlock> interpolationBlockList) {
-
+    public boolean validateAllFilesExistOrAbort(String directory, List<InterpolationBlock> interpolationBlockList) {
+        boolean result=true;
         for (InterpolationBlock interpolationBlock: interpolationBlockList) {
             boolean existInitFile = fileService.existFile(directory, interpolationBlock.getInitFile());
-            if (existInitFile) {
-                executionService.abortError("File " + interpolationBlock.getInitFile() + " does not exist");
+            if (!existInitFile) {
+                messageService.messageError("File " + interpolationBlock.getInitFile() + " does not exist");
+                result = false;
             }
 
             boolean existEndFile = fileService.existFile(directory, interpolationBlock.getEndFile());
-            if (existEndFile) {
-                executionService.abortError("File " + interpolationBlock.getEndFile() + " does not exist");
+            if (!existEndFile) {
+                messageService.messageError("File " + interpolationBlock.getEndFile() + " does not exist");
+                result = false;
             }
         }
+        return result;
     }
 }

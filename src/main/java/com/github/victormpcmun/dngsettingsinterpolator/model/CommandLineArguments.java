@@ -68,11 +68,13 @@ public class CommandLineArguments {
             if (FILES.equals(arg)) {
                 fileSeries=true;
                 settingSeries=false;
+                continue;
             }
 
             if (SETTINGS.equals(arg)) {
                 fileSeries=false;
                 settingSeries=true;
+                continue;
             }
 
             if (fileSeries) {

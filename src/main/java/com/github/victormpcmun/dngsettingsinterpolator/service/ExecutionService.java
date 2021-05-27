@@ -22,6 +22,8 @@ public class ExecutionService {
     FileValidationService fileValidationService = FileValidationService.INSTANCE;
 
     public void execute(CommandLineArguments commandLineArguments) {
+        messageService.message("DNG Settings Interpolator");
+        messageService.message("=========================");
         if (!commandLineArguments.isParametersOK()) {
             abortNoError("Parameters are not set correctly.");
         }
@@ -37,7 +39,10 @@ public class ExecutionService {
     private void go(CommandLineArguments commandLineArguments) {
 
         List<InterpolationBlock> interpolationBlockList = commandLineArguments.getInterpolationBlockList();
-        fileValidationService.validateAllFilesExistOrAbort(commandLineArguments.getWorkingDirectory(), interpolationBlockList);
+        boolean allFilesExist = fileValidationService.validateAllFilesExistOrAbort(commandLineArguments.getWorkingDirectory(), interpolationBlockList);
+        if (!allFilesExist) {
+            abortError("At least one file does not exist");
+        }
 
         for (InterpolationBlock interpolationBlock: interpolationBlockList) {
             processBlock(commandLineArguments, interpolationBlock);
@@ -57,23 +62,25 @@ public class ExecutionService {
         List<SettingRange> settingRangeList = settingRangeService.calculateSettingRangeList(workingDirectory, interpolationBlock, settingNamesList);
 
         List<String> files = directoryService.getFilesPathInBetween(workingDirectory,interpolationBlock);
+        messageService.emptyLine();
+        messageService.message("Procession block from  " + initFile + " to " + endFile + " => " + files.size() + " files");
         int filesCount = files.size();
 
-        messageService.message("Procession block from  " + initFile + " to " + endFile);
+
 
         for (int fileIndex=0; fileIndex<filesCount;fileIndex++) {
             String fileName = files.get(fileIndex);
             backupService.backupFile(workingDirectory, fileName, backupDirectory);
             processFile(workingDirectory, fileName, settingRangeList, filesCount, fileIndex);
         }
-        messageService.message("End => " + "Total files updated:" + filesCount);
+        messageService.message("End => " + "Total files updated in this block:" + filesCount);
     }
 
 
     private void processFile(String workingDirectory, String fileName, List<SettingRange> settingRangeList,  int filesCount, int fileIndex) {
         Settings settings = interpolatorService.calculateInterpolatedSettings(settingRangeList, filesCount, fileIndex);
         settingService.changeSettingValueInFile(workingDirectory, fileName, settings);
-        messageService.message("File => " + fileName + " " + settings);
+        messageService.message("Processed File => " + fileName);
     }
 
 
