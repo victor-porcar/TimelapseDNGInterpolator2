@@ -8,7 +8,7 @@ Please note that Adobe offers a [free tool](https://helpx.adobe.com/es/photoshop
 
 ## Motivation
 
-I created this tool for my own use to process timelapses when using Adobe Lightroom, just for fun, so it is basic and there is plenty of room to improve. Said that, it is fully working and I believe it could be useful for somebody else, so I decided to make it publicly available under license Apache 2.0. If you feel like to extend it, please do it!.
+I created this tool for my own use to process timelapses when using Adobe Lightroom, just for fun, so it is basic and there is plenty of room to improvement. Said that, it is fully working and I believe it could be useful for somebody else, so I decided to make it publicly available under license Apache 2.0. If you feel like to extend it, please do it!.
 
  
 ## How it works
