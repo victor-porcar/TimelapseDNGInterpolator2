@@ -1,7 +1,8 @@
-# Lightroom and GOPRO
+# Lightroom and GoPro
 
+The following is an example that shows a timelapse where first there is a full moon and progressively the moon is hidden in the mountain, so the light condition changes dramatically.
 
-Let's configure the GoPro 8 to shoot a nighlapse
+It is assumed that the images GoPro 8 have been taken in a configuration similar to:
 
 * Time Lapse => Night lapse
 * Lens: Wide
@@ -19,22 +20,29 @@ Let's configure the GoPro 8 to shoot a nighlapse
 Let's divide the images in three lists
 
 LIST A: images having FULL moon
-LIST B: images having transition between moon and no moon
-LIST C: images without moon (completely dark)
+LIST B: images having TRANSITION between moon and no moon
+LIST C: images with NO moon (completely dark)
 
-Workflow:
+## Workflow
 
-1) Import all images of the nightlapse (GRP format) as DNG files in Lightroom
-2) Adjust the settings for all images in List A and the first of List B  as described in point "Settings for images with full moon" 
-3) Adjust the settings for all images of List B and the last of List B as described in point "Settings for images without moon"
-4) Go to  "Library" Lightroom panel select all images of the timelapse (List A, List B and List c), then Menu Metadata -> "Update DNG previews & Metadata": this operation will update the DNG files with the proper settings
-5) Execute this tool as follows:
+* Import all images of the nightlapse (GRP format) as DNG files in Lightroom
+ 
+* Adjust the settings for all images in List A and the first of List B  as described in point "Settings for images with full moon" 
+
+* Adjust the settings for all images of List B and the last of List B as described in point "Settings for images without moon"
+
+* Go to  "Library" Lightroom panel select all images of the timelapse (List A, List B and List c), then Menu Metadata -> "Update DNG previews & Metadata": this operation will update the DNG files with the proper settings
+
+* Execute this tool as follows:
 
 `java -jar dng-settings-interpolator-X.X.jar D:\IMAGES D:\BACKUP -- files <first file of list B> <last file of list b>`
 
-6) Once the tool has finished, in the Library panel of Lightroom select the directory having the images and select 
+* Once the tool has finished, in the Library panel of Lightroom select the directory having the images and select 
  ![syncronize folder](images/syncronizeFolder.jpg)
+ 
+* The images in List B shows a smooth transition!!
 
+* Create the timelapse using your favourite tool from the list o images !!
 
 
 
