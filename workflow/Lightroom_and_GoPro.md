@@ -1,8 +1,8 @@
 # Lightroom and GoPro
 
-The following is an example that shows a timelapse where first there is a full moon and progressively the moon is hidden in the mountain, so the light condition changes dramatically.
+The following is an example that shows a timelapse (nightlapse) where first there is a full moon and progressively the moon is hidden by the mountain, so the light condition changes in an important manner.
 
-It is assumed that the images GoPro 8 have been taken in a configuration similar to:
+It is assumed that the images are taken by GoPro camera in RAW format (GPR) from a configuration similar to:
 
 * Time Lapse => Night lapse
 * Lens: Wide
@@ -17,33 +17,32 @@ It is assumed that the images GoPro 8 have been taken in a configuration similar
 * Color: Flat
 
 
-Let's divide the images in three lists
+Let's divide all the images in three lists
 
-LIST A: images having FULL moon
-LIST B: images having TRANSITION between moon and no moon
-LIST C: images with NO moon (completely dark)
+* List A: images having FULL moon
+* List B: images having TRANSITION between moon and no moon
+* List C: images with NO moon (completely dark)
 
 ## Workflow
 
 * Import all images of the nightlapse (GRP format) as DNG files in Lightroom
  
-* Adjust the settings for all images in List A and the first of List B  as described in point "Settings for images with full moon" 
+* Adjust the settings for all images in List A and the first image of List B as described in point below "Settings for images with full moon" 
 
-* Adjust the settings for all images of List B and the last of List B as described in point "Settings for images without moon"
+* Adjust the settings for all images of List C and the last of List B as described in point below "Settings for images without moon"
 
-* Go to  "Library" Lightroom panel select all images of the timelapse (List A, List B and List c), then Menu Metadata -> "Update DNG previews & Metadata": this operation will update the DNG files with the proper settings
+* In Lightroom, go to  *Library* panel and select all images of the timelapse (List A, List B and List c), then Menu Metadata -> "Update DNG previews & Metadata": this operation will update the DNG files with the setting we changed.
 
 * Execute this tool as follows:
 
-`java -jar dng-settings-interpolator-X.X.jar D:\IMAGES D:\BACKUP -- files <first file of list B> <last file of list b>`
+`java -jar dng-settings-interpolator-X.X.jar <folder image> <folder backup> -- files <first file of List B> <last file of List b>`
 
-* Once the tool has finished, in the Library panel of Lightroom select the directory having the images and select 
+* Once the tool has finished, select the directory in the *Library* panel having the images and select "Synchronize Folder..."
  ![syncronize folder](images/syncronizeFolder.jpg)
  
-* The images in List B shows a smooth transition!!
+* Now all the images from List B shows a smooth transition!!
 
 * Create the timelapse using your favourite tool from the list o images !!
-
 
 
 
@@ -53,7 +52,7 @@ LIST C: images with NO moon (completely dark)
 
 
 
-Settings in Develop TAB in Lightroom
+Settings in *Develop* Panel
 
 ![Moon basic](images//basic_full_moon.jpg) ![Moon basic](images//detail_full_moon.jpg)  ![Moon basic](images/tone_curve_full_moon.jpg)
 
@@ -66,7 +65,7 @@ Settings in Develop TAB in Lightroom
 
 # Setting for images without  moon
 
-Settings in Develop TAB in Lightroom
+Settings in *Develop* Panel
 
 ![Moon basic](images//basic_no_moon.jpg) ![Moon basic](images//detail_no_moon.jpg)  ![Moon basic](images/tone_curve_no_moon.jpg)
 
