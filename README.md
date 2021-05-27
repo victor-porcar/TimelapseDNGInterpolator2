@@ -8,24 +8,22 @@ Please note that Adobe offers a [free tool](https://helpx.adobe.com/es/photoshop
 
 ## Motivation
 
-I created this tool for my own use to process steady transitions in timelapses when using Adobe Lightroom. Please see [Lightroom and GoPro](Lightroom_and_GoPro.md) and [Lightroom and Nikon](Lightroom_and_Nikon.md)
+I created this tool for my own use to process smooth transitions in timelapses when using Adobe Lightroom, but it can be used with any other tool supporting DNG.
 
-The project is what I call a *one afternoon* project (written in a few hours) just for fun, so it is basic and there is a plenty of room to improve. Said that, it is fully working and I believe it could be useful for somebody else, so I decided to make it publicly available under license Apache 2.0
-
-
+Note that this project is what I call a *one afternoon project* (written in a few hours) just for fun, so it is basic and there is plenty of room to improve. Said that, it is fully working and I believe it could be useful for somebody else, so I decided to make it publicly available under license Apache 2.0, which means you can do practically whatever you want with the code. If you want to improve please feel welcome to do it!.
 
  
 ## How it works
 
-Let's suppose there is a list of consecutives images in dng format from a timelapse in the directory `D:\IMAGES`:
+Let's suppose there is a list of consecutives images in dng format from a timelapse in a directory `D:\IMAGES`:
 
 `Image01.dng` `Image02.dng` `Image03.dng` `Image04.dng` `Image05.dng` ... `Image20.dng` ... `Image99.dng`
 
-At this point the setting exposure is set to 0 for all images (just as it is taken from the camera)
+At this point all settings are set to 0 for all images (as it is taken from the camera)
 
-Using a program like Lightroom or similar, the exposure for `Image01.dng` is set to `1`  and for `Image20.dng` is set to `2`
+Using a program like Lightroom or similar,  we set some settings in `Image01.dng` for example exposure is set to 1 and `Image20.dng` is set to 2
 
-Now, it would be very nice to have a gradual increase of exposure parameter in a range of images `Image01.dng` to `Image20.dng` as follows:
+Now, it would be very nice to have a gradual increase of exposure from `Image01.dng` to `Image20.dng` as follows:
 
 * `Image01.dng` exposure = 1
 * `Image02.dng` exposure = 1.05
@@ -35,15 +33,17 @@ Now, it would be very nice to have a gradual increase of exposure parameter in a
 * `Image19.dng` exposure = 1.95
 * `Image20.dng` exposure = 2
 
-This could be achieved automatically using this tool as follows:
+This is what this tool performs, it interpolates values of settings *between* two images:
 
-`java -jar dng-settings-interpolator-X.X.jar D:\IMAGES D:\BACKUP Image01.dng Image20.dng crs:Exposure2012`
+`java -jar dng-settings-interpolator-X.X.jar D:\IMAGES D:\BACKUP -- files Image01.dng Image20.dng --settings crs:Exposure2012`
 
 Where:
 
-* `dng-settings-interpolator-X.X.jar` is the latest version of the `dng-settings-interpolator-X.X.jar` file (located in `/bin`directory) 
+* `dng-settings-interpolator-X.X.jar` is the latest version of the tool (located in `/bin`directory of this repository)
 * `D:\IMAGES` is the folder containing all the **.dng files
 * `D:\BACKUP` is a folder where the tool will make a copy before changing any file
+* --files : it means that subsequent parameters will be the names of files to interpolate (Image01.dng Image20.dng)
+* --settings: it means that subsequent parameters will be the settings to interpolate
 * `crs:Exposure2012` is the name of Exposure setting in XMP definitions of the DNG file (see settings chapter below) 
 
 Once the execution is over, the exposure value for range of images from `Image02.dng`  to `Image19.dng` will have been overwritten by the tool as per a linear interpolation function between values 1 (from `Image01.dng` ) and 2 (`Image20.dng`)
@@ -54,14 +54,9 @@ Once the execution is over, the exposure value for range of images from `Image02
 
 #### Interpolate a set of settings 
 
-`java -jar dng-settings-interpolator-X.X.jar [image_directory] [backup_directory] [file1] [file2] [setting1 Name] [setting2 name] ... [settingN name]`
+`java -jar dng-settings-interpolator-X.X.jar [image_directory] [backup_directory] --file [file1] [file2] ... [filen] --settings [setting1 Name] [setting2 name] ... [settingN name]`
 
- 
-#### Interpolate all settings at once
-
-Use --all
-
-`java -jar dng-settings-interpolator-X.X.jar [image_directory] [backup_directory] [file1] [file2] -all
+If no --settings argument is provider, the tool will interpolate ALL settings
  
 #### View all available settings
 
