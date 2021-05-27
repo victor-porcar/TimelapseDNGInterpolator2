@@ -1,4 +1,4 @@
-# DNG Images Settings Interpolator
+# DNG Images Settings Interpolator for Timelapses
 
 Command line tool to interpolate settings values from a list of images in image format [DNG](https://www.adobe.com/content/dam/acom/en/products/photoshop/pdfs/dng_spec_1.4.0.0.pdf) to process smooth transitions in timelapses.
 
