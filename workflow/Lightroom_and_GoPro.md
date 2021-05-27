@@ -19,3 +19,10 @@ Let's configure the GoPro 8 to shoot a nighlapse
 Settings in Develop TAB in Lightroom
 
 ![Moon basic](images//basic_full_moon.jpg) ![Moon basic](images//detail_full_moon.jpg)  ![Moon basic](images/tone_curve_full_moon.jpg)
+
+
+## Setting for images without  moon
+
+Settings in Develop TAB in Lightroom
+
+![Moon basic](images//basic_no_moon.jpg) ![Moon basic](images//detail_no_moon.jpg)  ![Moon basic](images/tone_curve_no_moon.jpg)
