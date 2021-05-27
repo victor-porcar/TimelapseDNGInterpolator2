@@ -10,7 +10,7 @@ Please note that Adobe offers a [free tool](https://helpx.adobe.com/es/photoshop
 
 I created this tool for my own use to process timelapses when using Adobe Lightroom, but it can be used with any other application supporting DNG.
 
-Note that I created this project just for fun in my spare time, it is basic and there is plenty of room to improve. Said that, it is fully working and I believe it could be useful for somebody else, so I decided to make it publicly available under license Apache 2.0. If you feel like to extend it, please do it!.
+Note that I created this tool just for fun, in a few hours, so it is basic and there is plenty of room to improve. Said that, it is fully working and I believe it could be useful for somebody else, so I decided to make it publicly available under license Apache 2.0. If you feel like to extend it, please do it!.
 
  
 ## How it works
